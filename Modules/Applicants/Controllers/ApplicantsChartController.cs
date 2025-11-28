@@ -1,9 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+<<<<<<< HEAD
 using Project.Api.Modules.Applicants.Data;
 using Project.Api.Modules.Applicants.Models;
 using System.Globalization;
 using Microsoft.Extensions.Logging;
+=======
+using Microsoft.Extensions.Logging;
+using Project.Api.Modules.Applicants.Data;
+using Project.Api.Modules.Applicants.Extensions;
+using Project.Api.Modules.Applicants.Models;
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
 
 namespace Project.Api.Modules.Applicants.Controllers
 {
@@ -11,12 +18,23 @@ namespace Project.Api.Modules.Applicants.Controllers
     [Route("api/applicants/chart")]
     public class ApplicantsChartController : ControllerBase
     {
+<<<<<<< HEAD
         private readonly ApplicantsDbContext _db;
         private readonly ILogger<ApplicantsChartController> _logger;
 
         public ApplicantsChartController(ApplicantsDbContext db, ILogger<ApplicantsChartController> logger)
         {
             _db = db;
+=======
+        private readonly ApplicantsDbContextFactory _factory;
+        private readonly ILogger<ApplicantsChartController> _logger;
+
+        public ApplicantsChartController(
+            ApplicantsDbContextFactory factory,
+            ILogger<ApplicantsChartController> logger)
+        {
+            _factory = factory;
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             _logger = logger;
         }
 
@@ -27,7 +45,18 @@ namespace Project.Api.Modules.Applicants.Controllers
             public DateTime StartDate { get; set; }
             public DateTime EndDate { get; set; }
             public List<int> Years { get; set; } = new();
+<<<<<<< HEAD
             public List<string>? Filials { get; set; }
+=======
+            public List<string>? PK { get; set; }
+            public List<string>? Levels { get; set; }
+            public List<string>? States { get; set; }
+        }
+
+        public class PKRequest
+        {
+            public List<int> Years { get; set; } = new();
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             public List<string>? Levels { get; set; }
             public List<string>? States { get; set; }
         }
@@ -45,6 +74,7 @@ namespace Project.Api.Modules.Applicants.Controllers
             public List<ChartSeriesPoint> Series { get; set; } = new();
         }
 
+<<<<<<< HEAD
         // ------------ API -------------------------
         [HttpPost("build")]
         public async Task<IActionResult> Build([FromBody] ChartRequest req)
@@ -59,12 +89,73 @@ namespace Project.Api.Modules.Applicants.Controllers
 
             var jsonReq = System.Text.Json.JsonSerializer.Serialize(req);
             _logger.LogInformation($"Full request: {jsonReq}");
+=======
+        public class PKResponse
+        {
+            public List<string> PKs { get; set; } = new();
+        }
+
+        // ------------ API -------------------------
+        [HttpPost("helpers/PKs")]
+        public async Task<IActionResult> GetPKs(
+            [FromQuery] string db,
+            [FromBody] PKRequest req)
+        {
+            if (string.IsNullOrWhiteSpace(db))
+                return BadRequest("Parameter 'db' is required");
+
+            using var _db = _factory.Create(db);
+
+            _logger.LogInformation($"GET PKS REQUEST = {System.Text.Json.JsonSerializer.Serialize(req)}");
+
+            IQueryable<AbitSpisokAbit.ApplicantList> q = _db.Applicants;
+
+            if (req.Years?.Any() == true)
+                q = q.Where(a => req.Years.Contains(a.RecruitmentYear ?? -1));
+            else
+                q = q.Where(a => a.RecruitmentYear.HasValue);
+
+            if (req.Levels?.Any() == true)
+                q = q.Where(a => req.Levels.Contains(a.LevelName));
+
+            if (req.States?.Any() == true)
+                q = q.Where(a => req.States.Contains(a.ApplicationStatus));
+
+            var pks = await q
+                .Where(a => !string.IsNullOrEmpty(a.PK))
+                .Select(a => a.PK!)
+                .Distinct()
+                .ToListAsync();
+
+            var response = new PKResponse
+            {
+                PKs = pks.Distinct().ToList()
+            };
+
+            return Ok(response);
+        }
+
+        [HttpPost("build")]
+        public async Task<IActionResult> Build(
+            [FromQuery] string db,
+            [FromBody] ChartRequest req)
+        {
+            if (string.IsNullOrWhiteSpace(db))
+                return BadRequest("Parameter 'db' is required");
+
+            using var _db = _factory.Create(db);
+
+            _logger.LogInformation($"CHART REQUEST = {System.Text.Json.JsonSerializer.Serialize(req)}");
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
 
             var result = new List<ChartSeriesByYear>();
 
             foreach (var year in req.Years)
             {
+<<<<<<< HEAD
                 // диапазон дат как в VB-функции GetRange(year)
+=======
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
                 var start = new DateTime(year, req.StartDate.Month, req.StartDate.Day);
                 var end = new DateTime(year, req.EndDate.Month, req.EndDate.Day);
 
@@ -72,8 +163,12 @@ namespace Project.Api.Modules.Applicants.Controllers
                     .Select(x => start.AddDays(x))
                     .ToList();
 
+<<<<<<< HEAD
                 // выборка дат из БД — точная копия VB GetQ()
                 var dates = await GetDates(req, year);
+=======
+                var dates = await GetDates(_db, req, year);
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
 
                 int cumulative = 0;
                 var series = new List<ChartSeriesPoint>();
@@ -85,7 +180,11 @@ namespace Project.Api.Modules.Applicants.Controllers
 
                     series.Add(new ChartSeriesPoint
                     {
+<<<<<<< HEAD
                         Argument = GetDateStr(day),  // "1.Июнь", "2.Июль" и т.д. как в VB
+=======
+                        Argument = GetDateStr(day),
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
                         Value = cumulative
                     });
                 }
@@ -101,6 +200,7 @@ namespace Project.Api.Modules.Applicants.Controllers
         }
 
         // =============================================================
+<<<<<<< HEAD
         // ========= ПОЛНЫЙ АНАЛОГ GetQ() в LINQ =======================
         // =============================================================
         private async Task<List<DateTime>> GetDates(ChartRequest req, int year)
@@ -132,11 +232,32 @@ namespace Project.Api.Modules.Applicants.Controllers
                 q = q.Where(a => req.States.Contains(a.ApplicationStatus));
                 _logger.LogInformation($"GetDates - States filter applied: [{string.Join(", ", req.States)}]");
             }
+=======
+        private async Task<List<DateTime>> GetDates(
+            ApplicantsDbContext _db,
+            ChartRequest req, int year)
+        {
+            IQueryable<AbitSpisokAbit.ApplicantList> q = _db.Applicants;
+
+            q = q.Where(a => req.Years.Contains(a.RecruitmentYear ?? -1));
+
+            if (req.PK?.Any() == true)
+                q = q.Where(a => req.PK.Contains(a.PK));
+
+            if (req.Levels?.Any() == true)
+                q = q.Where(a => req.Levels.Contains(a.LevelName));
+
+            if (req.States?.Any() == true)
+                q = q.Where(a => req.States.Contains(a.ApplicationStatus));
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
 
             switch (req.TypeCnn)
             {
                 case 1:
+<<<<<<< HEAD
                     _logger.LogInformation("GetDates - Executing case 1 query");
+=======
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
                     return await q
                         .Where(a => new[] { 1, 2, 4, 5, 7, 8 }.Contains(a.EducationService ?? -1))
                         .Where(a => a.DocsSubmitDate != null)
@@ -145,7 +266,10 @@ namespace Project.Api.Modules.Applicants.Controllers
                         .ToListAsync();
 
                 case 2:
+<<<<<<< HEAD
                     _logger.LogInformation("GetDates - Executing case 2 query");
+=======
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
                     return await q
                         .Where(a => a.DocsSubmitDate != null)
                         .GroupBy(a => a.Id)
@@ -154,7 +278,10 @@ namespace Project.Api.Modules.Applicants.Controllers
                         .ToListAsync();
 
                 case 3:
+<<<<<<< HEAD
                     _logger.LogInformation("GetDates - Executing case 3 query");
+=======
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
                     return await q
                         .Where(a => a.EnrollmentDate != null)
                         .Select(a => a.EnrollmentDate!.Value.Date)
@@ -162,12 +289,16 @@ namespace Project.Api.Modules.Applicants.Controllers
                         .ToListAsync();
 
                 case 4:
+<<<<<<< HEAD
                     _logger.LogInformation("GetDates - Executing case 4 query");
+=======
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
                     return await q
                         .Where(a => a.RefusedEnrollmentDate != null)
                         .Select(a => a.RefusedEnrollmentDate!.Value.Date)
                         .Where(d => d.Year == year)
                         .ToListAsync();
+<<<<<<< HEAD
 
                 default:
                     _logger.LogInformation("GetDates - Executing default query");
@@ -206,5 +337,36 @@ namespace Project.Api.Modules.Applicants.Controllers
                 default: return "Янв.";
             }
         }
+=======
+            }
+
+            return await q
+                .Where(a => a.DocsSubmitDate != null)
+                .Select(a => a.DocsSubmitDate!.Value.Date)
+                .Where(d => d.Year == year)
+                .ToListAsync();
+        }
+
+        private string GetDateStr(DateTime val)
+            => val.Day + "." + GetNameMonth(val.Month);
+
+        private string GetNameMonth(int m) =>
+            m switch
+            {
+                1 => "Янв.",
+                2 => "Фев.",
+                3 => "Март",
+                4 => "Апр.",
+                5 => "Май",
+                6 => "Июнь",
+                7 => "Июль",
+                8 => "Авг.",
+                9 => "Сент.",
+                10 => "Окт.",
+                11 => "Нояб.",
+                12 => "Дек.",
+                _ => "Янв."
+            };
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
     }
 }

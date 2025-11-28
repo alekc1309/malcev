@@ -3,6 +3,10 @@ using DevExtreme.AspNet.Mvc;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Project.Api.Modules.Applicants.Data;
+<<<<<<< HEAD
+=======
+using Project.Api.Modules.Applicants.Extensions;
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
 using Project.Api.Modules.Applicants.Models;
 using Project.Api.Modules.Applicants.Models.Dto;
 
@@ -12,6 +16,7 @@ namespace Project.Api.Modules.Applicants.Controllers
     [Route("api/[controller]")]
     public class ApplicantsController : ControllerBase
     {
+<<<<<<< HEAD
         private readonly ApplicantsDbContext _context;
 
         public ApplicantsController(ApplicantsDbContext context)
@@ -30,6 +35,30 @@ namespace Project.Api.Modules.Applicants.Controllers
                     examInfo => examInfo.ApplicationCode,
                     (applicant, examInfo) => new { applicant, examInfo }
                 )
+=======
+        private readonly ApplicantsDbContextFactory _factory;
+
+        public ApplicantsController(ApplicantsDbContextFactory factory)
+        {
+            _factory = factory;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById([FromQuery] string db, [FromRoute] int id)
+        {
+            if (string.IsNullOrWhiteSpace(db))
+                return BadRequest("db is required");
+
+            using var _context = _factory.Create(db);
+
+            var applicantData = await _context.Applicants
+                .AsNoTracking()
+                .Join(_context.ExamInfos,
+                    a => a.ApplicationCode,
+                    e => e.ApplicationCode,
+                    (a, e) => new { applicant = a, examInfo = e })
+                .Where(joined => joined.applicant.Id == id)
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
                 .Select(joined => new AbitSpisokAbitDto
                 {
                     // ======= Основные поля =======
@@ -127,6 +156,10 @@ namespace Project.Api.Modules.Applicants.Controllers
                     BenefitDocCode = joined.applicant.BenefitDocCode,
                     Deleted = joined.applicant.Deleted,
                     OtherVUZ = joined.applicant.OtherVUZ,
+<<<<<<< HEAD
+=======
+                    PK = joined.applicant.PK,
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
 
                     PlanNabora =
                         joined.applicant.EducationService == 1 ? (joined.applicant.OOP ?? 0).ToString() :
@@ -211,7 +244,10 @@ namespace Project.Api.Modules.Applicants.Controllers
                             ? joined.applicant.OKSO
                             : null,
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
                     ConsentUploadDate = _context.AllDocuments
                         .Where(d => d.AbitId == joined.applicant.Id && d.DocumentCode == -9)
                         .SelectMany(d => _context.Files
@@ -263,10 +299,72 @@ namespace Project.Api.Modules.Applicants.Controllers
                         .Where(d => d.AbitId == joined.applicant.Id && d.DocumentCode == 43)
                         .SelectMany(d => _context.Files.Where(f => f.DocumentId == d.Code && f.IsDeleted != true))
                         .Count(),
+<<<<<<< HEAD
+=======
+                })
+                .FirstOrDefaultAsync();
+
+            if (applicantData == null)
+                return NotFound();
+
+            return Ok(applicantData);
+        }
+
+        [HttpPost("summary")]
+        public async Task<IActionResult> GetSummary([FromQuery] string db, DataSourceLoadOptions loadOptions)
+        {
+            if (string.IsNullOrWhiteSpace(db))
+                return BadRequest("db is required");
+
+            using var _context = _factory.Create(db);
+
+            var query = _context.Applicants
+                .AsNoTracking()
+                .Select(applicant => new
+                {
+                    ApplicationCode = applicant.ApplicationCode,
+                    FullName = applicant.FullName,
+                    LastName = applicant.LastName,
+                    FirstName = applicant.FirstName,
+                    MiddleName = applicant.MiddleName,
+                    Email = applicant.Email,
+                    Mobile = applicant.Mobile,
+                    SpecialtyName = applicant.SpecialtyName,
+                    Faculty = applicant.Faculty,
+                    EducationForm = applicant.EducationForm,
+                    Original = applicant.Original,
+                    Enrolled = applicant.Enrolled,
+                    Status = applicant.Status,
+                    ApplicationStatus = applicant.ApplicationStatus,
+                    RecruitmentYear = applicant.RecruitmentYear,
+                    Priority = applicant.Priority,
+                    AvgAttestatScore = applicant.AvgAttestatScore,
+                    ScoreSum = _context.ExamInfos
+                        .Where(e => e.ApplicationCode == applicant.ApplicationCode)
+                        .Select(e => e.ScoreSum)
+                        .FirstOrDefault() ?? 0,
+                    ConsentFilesCount = _context.AllDocuments
+                        .Where(d => d.AbitId == applicant.Id && d.DocumentCode == -9)
+                        .SelectMany(d => _context.Files
+                            .Where(f => f.DocumentId == d.Code && f.IsDeleted != true))
+                        .Count(),
+                    GreenWaveFilesCount = _context.AllDocuments
+                        .Where(d => d.AbitId == applicant.Id && d.DocumentCode == 39)
+                        .SelectMany(d => _context.Files.Where(f => f.DocumentId == d.Code && f.IsDeleted != true))
+                        .Count(),
+                    ReductionFilesCount = _context.AllDocuments
+                        .Where(d => d.AbitId == applicant.Id && d.DocumentCode == 43)
+                        .SelectMany(d => _context.Files.Where(f => f.DocumentId == d.Code && f.IsDeleted != true))
+                        .Count()
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
                 });
 
             var result = await DataSourceLoader.LoadAsync(query, loadOptions);
             return Ok(result);
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd

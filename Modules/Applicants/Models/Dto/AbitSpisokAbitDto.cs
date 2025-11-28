@@ -1,5 +1,9 @@
 ﻿// Project.Api\Modules\Applicants\Models\Dto\AbitSpisokAbitDto.cs
 using System;
+<<<<<<< HEAD
+=======
+using System.ComponentModel.DataAnnotations.Schema;
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
 
 namespace Project.Api.Modules.Applicants.Models.Dto
 {
@@ -136,5 +140,9 @@ namespace Project.Api.Modules.Applicants.Models.Dto
 
         public string? ReductionDate { get; set; }
         public int? ReductionFilesCount { get; set; }
+<<<<<<< HEAD
+=======
+        public string? PK { get; set; }
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
     }
 }

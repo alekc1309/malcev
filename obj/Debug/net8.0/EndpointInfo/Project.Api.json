@@ -10,6 +10,18 @@
         "tags": [
           "AbitAchievements"
         ],
+<<<<<<< HEAD
+=======
+        "parameters": [
+          {
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
         "requestBody": {
           "content": {
             "application/json": {
@@ -43,6 +55,16 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -64,6 +86,16 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -85,6 +117,44 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "loadOptions",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DataSourceLoadOptions"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/AbitSpisokAbit": {
+      "post": {
+        "tags": [
+          "AbitSpisokAbit"
+        ],
+        "parameters": [
+          {
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -106,6 +176,16 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -125,6 +205,18 @@
         "tags": [
           "AchievementTypes"
         ],
+<<<<<<< HEAD
+=======
+        "parameters": [
+          {
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
         "responses": {
           "200": {
             "description": "OK"
@@ -146,6 +238,16 @@
               "type": "integer",
               "format": "int32"
             }
+<<<<<<< HEAD
+=======
+          },
+          {
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
           }
         ],
         "responses": {
@@ -162,6 +264,7 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -182,6 +285,14 @@
           "Applicants"
         ],
         "parameters": [
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
           {
             "name": "loadOptions",
             "in": "query",
@@ -197,11 +308,124 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
+    "/api/Applicants/{id}": {
+      "get": {
+        "tags": [
+          "Applicants"
+        ],
+        "parameters": [
+          {
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Applicants/summary": {
+      "post": {
+        "tags": [
+          "Applicants"
+        ],
+        "parameters": [
+          {
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "loadOptions",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DataSourceLoadOptions"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/applicants/chart/helpers/PKs": {
+      "post": {
+        "tags": [
+          "ApplicantsChart"
+        ],
+        "parameters": [
+          {
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PKRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PKRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PKRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
     "/api/applicants/chart/build": {
       "post": {
         "tags": [
           "ApplicantsChart"
         ],
+<<<<<<< HEAD
+=======
+        "parameters": [
+          {
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
         "requestBody": {
           "content": {
             "application/json": {
@@ -235,6 +459,16 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -256,6 +490,16 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -270,6 +514,21 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
+    "/api/DbMetadata/databases": {
+      "get": {
+        "tags": [
+          "DbMetadata"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
     "/api/Disciplines": {
       "post": {
         "tags": [
@@ -277,6 +536,16 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -298,6 +567,16 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -319,6 +598,16 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -340,6 +629,16 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -361,6 +660,16 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -394,6 +703,16 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -415,6 +734,16 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -436,6 +765,16 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -457,6 +796,16 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -478,6 +827,16 @@
         ],
         "parameters": [
           {
+<<<<<<< HEAD
+=======
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "name": "loadOptions",
             "in": "query",
             "schema": {
@@ -518,7 +877,11 @@
             },
             "nullable": true
           },
+<<<<<<< HEAD
           "filials": {
+=======
+          "pk": {
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             "type": "array",
             "items": {
               "type": "string"
@@ -674,6 +1037,37 @@
         },
         "additionalProperties": false
       },
+<<<<<<< HEAD
+=======
+      "PKRequest": {
+        "type": "object",
+        "properties": {
+          "years": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "levels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "states": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
       "SortingInfo": {
         "type": "object",
         "properties": {

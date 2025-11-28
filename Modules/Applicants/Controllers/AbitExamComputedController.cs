@@ -3,7 +3,11 @@ using DevExtreme.AspNet.Mvc;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Project.Api.Modules.Applicants.Data;
+<<<<<<< HEAD
 using Project.Api.Modules.Applicants.Models;
+=======
+using Project.Api.Modules.Applicants.Extensions;
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
 using Project.Api.Modules.Applicants.Models.Dto;
 
 namespace Project.Api.Modules.Applicants.Controllers
@@ -12,6 +16,7 @@ namespace Project.Api.Modules.Applicants.Controllers
     [Route("api/[controller]")]
     public class AbitExamComputedController : ControllerBase
     {
+<<<<<<< HEAD
         private readonly ApplicantsDbContext _context;
 
         public AbitExamComputedController(ApplicantsDbContext context)
@@ -24,6 +29,25 @@ namespace Project.Api.Modules.Applicants.Controllers
         [HttpPost]
         public async Task<IActionResult> Get(DataSourceLoadOptions loadOptions)
         {
+=======
+        private readonly ApplicantsDbContextFactory _factory;
+
+        public AbitExamComputedController(ApplicantsDbContextFactory factory)
+        {
+            _factory = factory;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Get(
+            [FromQuery] string db,
+            DataSourceLoadOptions loadOptions)
+        {
+            if (string.IsNullOrWhiteSpace(db))
+                return BadRequest("Parameter 'db' is required");
+
+            using var _context = _factory.Create(db);
+
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
             var query = _context.ExamInfos
                 .AsNoTracking()
                 .Select(u => new AbitExamComputedDto
@@ -41,8 +65,13 @@ namespace Project.Api.Modules.Applicants.Controllers
                     Count = new[] { u.Score1, u.Score2, u.Score3, u.Score4, u.Score5, u.Score6 }
                         .Count(x => x.HasValue),
                     NoExamType = string.IsNullOrEmpty(u.Exam1) &&
+<<<<<<< HEAD
                                 string.IsNullOrEmpty(u.Exam2) &&
                                 string.IsNullOrEmpty(u.Exam3),
+=======
+                                 string.IsNullOrEmpty(u.Exam2) &&
+                                 string.IsNullOrEmpty(u.Exam3),
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
                     Exam1 = u.Exam1,
                     Exam2 = u.Exam2,
                     Exam3 = u.Exam3,
@@ -58,8 +87,15 @@ namespace Project.Api.Modules.Applicants.Controllers
                 });
 
             var result = await DataSourceLoader.LoadAsync(query, loadOptions);
+<<<<<<< HEAD
 
             return Ok(result);
         }
     }
 }
+=======
+            return Ok(result);
+        }
+    }
+}
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd

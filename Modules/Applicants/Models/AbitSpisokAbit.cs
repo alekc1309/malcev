@@ -313,6 +313,12 @@ namespace Project.Api.Modules.Applicants.Models
             [Column("ФилиалНазвание")]
             public string? Filials { get; set; }
 
+<<<<<<< HEAD
+=======
+            [Column("Сокращение")]
+            public string? PK { get; set; }
+
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
         }
     }
 }

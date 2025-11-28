@@ -26,6 +26,10 @@
   <ItemGroup>
     <PackageReference Include="DevExtreme.AspNet.Data" Version="2.8.6" />
     <PackageReference Include="DevExtreme.AspNet.Core" Version="22.2.3" />
+<<<<<<< HEAD
+=======
+    <PackageReference Include="DotNetEnv" Version="3.1.1" />
+>>>>>>> 96cbb32499ee99eeee01b23d0bc07d0078e622dd
     <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.10" />
