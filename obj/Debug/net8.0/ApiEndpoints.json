@@ -226,6 +226,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Project.Api.Modules.Applicants.Controllers.ApplicantsChartController",
+    "Method": "GetPKs",
+    "RelativePath": "api/applicants/chart/helpers/PKs",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "db",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "req",
+        "Type": "Project.Api.Modules.Applicants.Controllers.ApplicantsChartController\u002BPKRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Project.Api.Modules.Applicants.Controllers.ApplicantsController",
     "Method": "GetSummary",
     "RelativePath": "api/Applicants/summary",

@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "B:\\abitur\\malcev\\malcev\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\modules\\applicants\\controllers\\applicantschartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|solutionrelative:modules\\applicants\\controllers\\applicantschartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\modules\\applicants\\models\\dto\\abitspisokabitdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|solutionrelative:modules\\applicants\\models\\dto\\abitspisokabitdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\modules\\applicants\\models\\abitspisokabit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|solutionrelative:modules\\applicants\\models\\abitspisokabit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\modules\\applicants\\controllers\\abitachievementscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|solutionrelative:modules\\applicants\\controllers\\abitachievementscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\modules\\applicants\\controllers\\studentstatusescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|solutionrelative:modules\\applicants\\controllers\\studentstatusescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\modules\\applicants\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|solutionrelative:modules\\applicants\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\modules\\applicants\\controllers\\applicantscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,8 +27,20 @@
       "RelativeMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|solutionrelative:modules\\applicants\\data\\applicantsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\modules\\applicants\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|solutionrelative:modules\\applicants\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\modules\\applicants\\models\\dto\\applicantschartpointdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|solutionrelative:modules\\applicants\\models\\dto\\applicantschartpointdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\modules\\applicants\\models\\dto\\abitspisokabitdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|solutionrelative:modules\\applicants\\models\\dto\\abitspisokabitdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\modules\\applicants\\controllers\\abitachievementscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|solutionrelative:modules\\applicants\\controllers\\abitachievementscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\modules\\applicants\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,10 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\modules\\applicants\\controllers\\specialtycenterscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|solutionrelative:modules\\applicants\\controllers\\specialtycenterscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\modules\\applicants\\controllers\\studentstatusescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|solutionrelative:modules\\applicants\\controllers\\studentstatusescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{82F0FA17-530B-46E2-B9DF-616EED687EF2}|Project.Api.csproj|b:\\abitur\\malcev\\malcev\\modules\\applicants\\controllers\\paymententriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -130,7 +138,33 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
+              "Title": "ApplicantsChartPointDto.cs",
+              "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Models\\Dto\\ApplicantsChartPointDto.cs",
+              "RelativeDocumentMoniker": "Modules\\Applicants\\Models\\Dto\\ApplicantsChartPointDto.cs",
+              "ToolTip": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Models\\Dto\\ApplicantsChartPointDto.cs",
+              "RelativeToolTip": "Modules\\Applicants\\Models\\Dto\\ApplicantsChartPointDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T08:08:04.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AbitSpisokAbit.cs",
+              "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Models\\AbitSpisokAbit.cs",
+              "RelativeDocumentMoniker": "Modules\\Applicants\\Models\\AbitSpisokAbit.cs",
+              "ToolTip": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Models\\AbitSpisokAbit.cs",
+              "RelativeToolTip": "Modules\\Applicants\\Models\\AbitSpisokAbit.cs",
+              "ViewState": "AgIAADQBAAAAAAAAAAAmwD8BAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T08:07:45.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "StudentStatusesController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\StudentStatusesController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\StudentStatusesController.cs",
@@ -138,19 +172,21 @@
               "RelativeToolTip": "Modules\\Applicants\\Controllers\\StudentStatusesController.cs",
               "ViewState": "AgIAABsAAAAAAAAAAADwvy4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T11:34:24.21Z"
+              "WhenOpened": "2025-11-27T11:34:24.21Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "RolesController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\RolesController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\RolesController.cs",
               "ToolTip": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\RolesController.cs",
               "RelativeToolTip": "Modules\\Applicants\\Controllers\\RolesController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAADwvy8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAADwvy8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T11:34:11.488Z"
+              "WhenOpened": "2025-11-27T11:34:11.488Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -160,9 +196,10 @@
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\ApplicantsController.cs",
               "ToolTip": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\ApplicantsController.cs",
               "RelativeToolTip": "Modules\\Applicants\\Controllers\\ApplicantsController.cs",
-              "ViewState": "AgIAACMBAAAAAAAAAAAmwEsBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAADsBAAAAAAAAAAAmwEsBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T11:36:39.399Z"
+              "WhenOpened": "2025-11-27T11:36:39.399Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -172,25 +209,27 @@
               "RelativeDocumentMoniker": "Modules\\Applicants\\Data\\ApplicantsDbContext.cs",
               "ToolTip": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Data\\ApplicantsDbContext.cs",
               "RelativeToolTip": "Modules\\Applicants\\Data\\ApplicantsDbContext.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAcwBAAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T10:56:18.341Z"
+              "WhenOpened": "2025-11-26T10:56:18.341Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ApplicantsChartController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\ApplicantsChartController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\ApplicantsChartController.cs",
               "ToolTip": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\ApplicantsChartController.cs",
               "RelativeToolTip": "Modules\\Applicants\\Controllers\\ApplicantsChartController.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAiwLQAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAIwJkAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T06:28:24.284Z"
+              "WhenOpened": "2025-11-27T06:28:24.284Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "AbitSpisokAbitDto.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Models\\Dto\\AbitSpisokAbitDto.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Models\\Dto\\AbitSpisokAbitDto.cs",
@@ -202,20 +241,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "B:\\abitur\\malcev\\malcev\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAADwvy4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAADwvy4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T10:43:57.167Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "AbitAchievementsController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\AbitAchievementsController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\AbitAchievementsController.cs",
@@ -227,7 +266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "SpecialtyCentersController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\SpecialtyCentersController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\SpecialtyCentersController.cs",
@@ -239,7 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "UsersController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\UsersController.cs",
@@ -251,7 +290,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "PaymentEntriesController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\PaymentEntriesController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\PaymentEntriesController.cs",
@@ -263,7 +302,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "ExamTypesController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\ExamTypesController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\ExamTypesController.cs",
@@ -275,7 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "ExamInfoController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\ExamInfoController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\ExamInfoController.cs",
@@ -287,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "DocumentTypesController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\DocumentTypesController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\DocumentTypesController.cs",
@@ -299,7 +338,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "DocumentsShortController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\DocumentsShortController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\DocumentsShortController.cs",
@@ -311,7 +350,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "DisciplinesController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\DisciplinesController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\DisciplinesController.cs",
@@ -323,7 +362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "DbMetadataController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\DbMetadataController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\DbMetadataController.cs",
@@ -335,7 +374,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "CustomersController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\CustomersController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\CustomersController.cs",
@@ -347,7 +386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "AppShortController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\AppShortController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\AppShortController.cs",
@@ -359,7 +398,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "AllApplicationsController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\AllApplicationsController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\AllApplicationsController.cs",
@@ -371,7 +410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "AchievementTypesController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\AchievementTypesController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\AchievementTypesController.cs",
@@ -383,7 +422,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "AchievementTypeGroupsController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\AchievementTypeGroupsController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\AchievementTypeGroupsController.cs",
@@ -395,7 +434,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "AbitSpisokAbitController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\AbitSpisokAbitController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\AbitSpisokAbitController.cs",
@@ -407,7 +446,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "AbitMarksController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\AbitMarksController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\AbitMarksController.cs",
@@ -419,7 +458,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "AbitExamComputedController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\AbitExamComputedController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\AbitExamComputedController.cs",
@@ -431,7 +470,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "AbitDocumentsController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\AbitDocumentsController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\AbitDocumentsController.cs",
@@ -443,7 +482,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "AbitDisciplinesController.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Controllers\\AbitDisciplinesController.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Controllers\\AbitDisciplinesController.cs",
@@ -455,7 +494,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "appsettings.json",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -467,7 +506,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "AbitAchievement.cs",
               "DocumentMoniker": "B:\\abitur\\malcev\\malcev\\Modules\\Applicants\\Models\\AbitAchievement.cs",
               "RelativeDocumentMoniker": "Modules\\Applicants\\Models\\AbitAchievement.cs",

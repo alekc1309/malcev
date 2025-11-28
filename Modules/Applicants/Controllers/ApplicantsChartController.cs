@@ -34,6 +34,13 @@ namespace Project.Api.Modules.Applicants.Controllers
             public List<string>? States { get; set; }
         }
 
+        public class PKRequest
+        {
+            public List<int> Years { get; set; } = new();
+            public List<string>? Levels { get; set; }
+            public List<string>? States { get; set; }
+        }
+
         // ------------ DTO ответа -----------------
         public class ChartSeriesPoint
         {
@@ -47,7 +54,51 @@ namespace Project.Api.Modules.Applicants.Controllers
             public List<ChartSeriesPoint> Series { get; set; } = new();
         }
 
+        public class PKResponse
+        {
+            public List<string> PKs { get; set; } = new();
+        }
+
         // ------------ API -------------------------
+        [HttpPost("helpers/PKs")]
+        public async Task<IActionResult> GetPKs(
+            [FromQuery] string db,
+            [FromBody] PKRequest req)
+        {
+            if (string.IsNullOrWhiteSpace(db))
+                return BadRequest("Parameter 'db' is required");
+
+            using var _db = _factory.Create(db);
+
+            _logger.LogInformation($"GET PKS REQUEST = {System.Text.Json.JsonSerializer.Serialize(req)}");
+
+            IQueryable<AbitSpisokAbit.ApplicantList> q = _db.Applicants;
+
+            if (req.Years?.Any() == true)
+                q = q.Where(a => req.Years.Contains(a.RecruitmentYear ?? -1));
+            else
+                q = q.Where(a => a.RecruitmentYear.HasValue);
+
+            if (req.Levels?.Any() == true)
+                q = q.Where(a => req.Levels.Contains(a.LevelName));
+
+            if (req.States?.Any() == true)
+                q = q.Where(a => req.States.Contains(a.ApplicationStatus));
+
+            var pks = await q
+                .Where(a => !string.IsNullOrEmpty(a.PK))
+                .Select(a => a.PK!)
+                .Distinct()
+                .ToListAsync();
+
+            var response = new PKResponse
+            {
+                PKs = pks.Distinct().ToList()
+            };
+
+            return Ok(response);
+        }
+
         [HttpPost("build")]
         public async Task<IActionResult> Build(
             [FromQuery] string db,
@@ -58,7 +109,7 @@ namespace Project.Api.Modules.Applicants.Controllers
 
             using var _db = _factory.Create(db);
 
-            _logger.LogInformation($"REQUEST = {System.Text.Json.JsonSerializer.Serialize(req)}");
+            _logger.LogInformation($"CHART REQUEST = {System.Text.Json.JsonSerializer.Serialize(req)}");
 
             var result = new List<ChartSeriesByYear>();
 
@@ -97,7 +148,6 @@ namespace Project.Api.Modules.Applicants.Controllers
 
             return Ok(result);
         }
-
 
         // =============================================================
         private async Task<List<DateTime>> GetDates(
