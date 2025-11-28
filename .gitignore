@@ -1,0 +1,34 @@
+# Visual Studio
+.vs/
+.user
+.useros
+*.suo
+*.userprefs
+*.userosprefs
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio 2015+ cache/options
+.vs/
+
+# MSBuild
+*.userosprefs
+*.userprefs
+
+# Compiled files
+*.dll
+*.exe
+*.pdb
+*.cache
+*.tmp
