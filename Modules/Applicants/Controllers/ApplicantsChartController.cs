@@ -29,7 +29,7 @@ namespace Project.Api.Modules.Applicants.Controllers
             public DateTime StartDate { get; set; }
             public DateTime EndDate { get; set; }
             public List<int> Years { get; set; } = new();
-            public List<string>? Filials { get; set; }
+            public List<string>? PK { get; set; }
             public List<string>? Levels { get; set; }
             public List<string>? States { get; set; }
         }
@@ -98,6 +98,7 @@ namespace Project.Api.Modules.Applicants.Controllers
             return Ok(result);
         }
 
+
         // =============================================================
         private async Task<List<DateTime>> GetDates(
             ApplicantsDbContext _db,
@@ -107,8 +108,8 @@ namespace Project.Api.Modules.Applicants.Controllers
 
             q = q.Where(a => req.Years.Contains(a.RecruitmentYear ?? -1));
 
-            if (req.Filials?.Any() == true)
-                q = q.Where(a => req.Filials.Contains(a.Filials));
+            if (req.PK?.Any() == true)
+                q = q.Where(a => req.PK.Contains(a.PK));
 
             if (req.Levels?.Any() == true)
                 q = q.Where(a => req.Levels.Contains(a.LevelName));

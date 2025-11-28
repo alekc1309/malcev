@@ -264,7 +264,37 @@
         }
       }
     },
-    "/api/Applicants": {
+    "/api/Applicants/{id}": {
+      "get": {
+        "tags": [
+          "Applicants"
+        ],
+        "parameters": [
+          {
+            "name": "db",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Applicants/summary": {
       "post": {
         "tags": [
           "Applicants"
@@ -718,7 +748,7 @@
             },
             "nullable": true
           },
-          "filials": {
+          "pk": {
             "type": "array",
             "items": {
               "type": "string"

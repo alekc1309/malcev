@@ -873,3 +873,6 @@ D:\malcev\obj\Debug\net8.0\refint\Project.Api.dll
 D:\malcev\obj\Debug\net8.0\Project.Api.pdb
 D:\malcev\obj\Debug\net8.0\Project.Api.genruntimeconfig.cache
 D:\malcev\obj\Debug\net8.0\ref\Project.Api.dll
+B:\abitur\malcev\malcev\bin\Debug\net8.0\DotNetEnv.dll
+B:\abitur\malcev\malcev\bin\Debug\net8.0\Sprache.dll
+B:\abitur\malcev\malcev\obj\Debug\net8.0\Project.Api.sourcelink.json

@@ -1,5 +1,6 @@
 ﻿// Project.Api\Modules\Applicants\Models\Dto\AbitSpisokAbitDto.cs
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Project.Api.Modules.Applicants.Models.Dto
 {
@@ -136,5 +137,6 @@ namespace Project.Api.Modules.Applicants.Models.Dto
 
         public string? ReductionDate { get; set; }
         public int? ReductionFilesCount { get; set; }
+        public string? PK { get; set; }
     }
 }

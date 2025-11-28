@@ -20,25 +20,25 @@ namespace Project.Api.Modules.Applicants.Controllers
             _factory = factory;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Get([FromQuery] string db, DataSourceLoadOptions loadOptions)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById([FromQuery] string db, [FromRoute] int id)
         {
             if (string.IsNullOrWhiteSpace(db))
                 return BadRequest("db is required");
 
             using var _context = _factory.Create(db);
 
-            var query =
-                _context.Applicants
-                    .AsNoTracking()
-                    .Join(_context.ExamInfos,
-                        a => a.ApplicationCode,
-                        e => e.ApplicationCode,
-                        (a, e) => new { applicant = a, examInfo = e })
-                    .Select(joined => new AbitSpisokAbitDto
-                    {
-                        // ======= Основные поля =======
-                        Id = joined.applicant.Id,
+            var applicantData = await _context.Applicants
+                .AsNoTracking()
+                .Join(_context.ExamInfos,
+                    a => a.ApplicationCode,
+                    e => e.ApplicationCode,
+                    (a, e) => new { applicant = a, examInfo = e })
+                .Where(joined => joined.applicant.Id == id)
+                .Select(joined => new AbitSpisokAbitDto
+                {
+                    // ======= Основные поля =======
+                    Id = joined.applicant.Id,
                     ApplicationCode = joined.applicant.ApplicationCode,
                     FullName = joined.applicant.FullName,
                     LastName = joined.applicant.LastName,
@@ -132,6 +132,7 @@ namespace Project.Api.Modules.Applicants.Controllers
                     BenefitDocCode = joined.applicant.BenefitDocCode,
                     Deleted = joined.applicant.Deleted,
                     OtherVUZ = joined.applicant.OtherVUZ,
+                    PK = joined.applicant.PK,
 
                     PlanNabora =
                         joined.applicant.EducationService == 1 ? (joined.applicant.OOP ?? 0).ToString() :
@@ -216,7 +217,6 @@ namespace Project.Api.Modules.Applicants.Controllers
                             ? joined.applicant.OKSO
                             : null,
 
-
                     ConsentUploadDate = _context.AllDocuments
                         .Where(d => d.AbitId == joined.applicant.Id && d.DocumentCode == -9)
                         .SelectMany(d => _context.Files
@@ -268,6 +268,61 @@ namespace Project.Api.Modules.Applicants.Controllers
                         .Where(d => d.AbitId == joined.applicant.Id && d.DocumentCode == 43)
                         .SelectMany(d => _context.Files.Where(f => f.DocumentId == d.Code && f.IsDeleted != true))
                         .Count(),
+                })
+                .FirstOrDefaultAsync();
+
+            if (applicantData == null)
+                return NotFound();
+
+            return Ok(applicantData);
+        }
+
+        [HttpPost("summary")]
+        public async Task<IActionResult> GetSummary([FromQuery] string db, DataSourceLoadOptions loadOptions)
+        {
+            if (string.IsNullOrWhiteSpace(db))
+                return BadRequest("db is required");
+
+            using var _context = _factory.Create(db);
+
+            var query = _context.Applicants
+                .AsNoTracking()
+                .Select(applicant => new
+                {
+                    ApplicationCode = applicant.ApplicationCode,
+                    FullName = applicant.FullName,
+                    LastName = applicant.LastName,
+                    FirstName = applicant.FirstName,
+                    MiddleName = applicant.MiddleName,
+                    Email = applicant.Email,
+                    Mobile = applicant.Mobile,
+                    SpecialtyName = applicant.SpecialtyName,
+                    Faculty = applicant.Faculty,
+                    EducationForm = applicant.EducationForm,
+                    Original = applicant.Original,
+                    Enrolled = applicant.Enrolled,
+                    Status = applicant.Status,
+                    ApplicationStatus = applicant.ApplicationStatus,
+                    RecruitmentYear = applicant.RecruitmentYear,
+                    Priority = applicant.Priority,
+                    AvgAttestatScore = applicant.AvgAttestatScore,
+                    ScoreSum = _context.ExamInfos
+                        .Where(e => e.ApplicationCode == applicant.ApplicationCode)
+                        .Select(e => e.ScoreSum)
+                        .FirstOrDefault() ?? 0,
+                    ConsentFilesCount = _context.AllDocuments
+                        .Where(d => d.AbitId == applicant.Id && d.DocumentCode == -9)
+                        .SelectMany(d => _context.Files
+                            .Where(f => f.DocumentId == d.Code && f.IsDeleted != true))
+                        .Count(),
+                    GreenWaveFilesCount = _context.AllDocuments
+                        .Where(d => d.AbitId == applicant.Id && d.DocumentCode == 39)
+                        .SelectMany(d => _context.Files.Where(f => f.DocumentId == d.Code && f.IsDeleted != true))
+                        .Count(),
+                    ReductionFilesCount = _context.AllDocuments
+                        .Where(d => d.AbitId == applicant.Id && d.DocumentCode == 43)
+                        .SelectMany(d => _context.Files.Where(f => f.DocumentId == d.Code && f.IsDeleted != true))
+                        .Count()
                 });
 
             var result = await DataSourceLoader.LoadAsync(query, loadOptions);

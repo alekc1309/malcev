@@ -9648,26 +9648,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\imluza\\.nuget\\packages\\": {},
-    "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages": {},
+    "C:\\Users\\alekc1309\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\malcev\\Project.Api.csproj",
+      "projectUniqueName": "B:\\abitur\\malcev\\malcev\\Project.Api.csproj",
       "projectName": "Project.Api",
-      "projectPath": "D:\\malcev\\Project.Api.csproj",
-      "packagesPath": "C:\\Users\\imluza\\.nuget\\packages\\",
-      "outputPath": "D:\\malcev\\obj\\",
+      "projectPath": "B:\\abitur\\malcev\\malcev\\Project.Api.csproj",
+      "packagesPath": "C:\\Users\\alekc1309\\.nuget\\packages\\",
+      "outputPath": "B:\\abitur\\malcev\\malcev\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\imluza\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
+        "C:\\Users\\alekc1309\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -9676,7 +9673,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
