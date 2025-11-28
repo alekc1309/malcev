@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DotNetEnv;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 
 namespace Project.Api.Modules.Applicants.Controllers
@@ -17,9 +18,10 @@ namespace Project.Api.Modules.Applicants.Controllers
         [HttpGet("databases")]
         public async Task<IActionResult> GetDatabases()
         {
+            var host = Environment.GetEnvironmentVariable("DB_HOST");
             var connStr = _config.GetConnectionString("sqlServer");
 
-            var result = new List<string>();
+            var databases = new List<string>();
 
             using (var conn = new SqlConnection(connStr))
             {
@@ -34,9 +36,15 @@ namespace Project.Api.Modules.Applicants.Controllers
 
                 while (await reader.ReadAsync())
                 {
-                    result.Add(reader.GetString(0));
+                    databases.Add(reader.GetString(0));
                 }
             }
+
+            var result = new
+            {
+                Databases = databases,
+                IP = host
+            };
 
             return Ok(result);
         }
